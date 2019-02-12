@@ -1,0 +1,273 @@
+body{
+
+ width:1560px;
+
+ font-family:"Roboto";
+
+ 
+
+}
+
+#logo{
+
+font-size: 30px;
+
+letter-spacing: 12px;
+
+color: #f00;
+
+font-family: "Libre Franklin";
+
+background-image:url("logo.png");
+
+background-repeat:no-repeat;
+
+height:70px;
+
+width:102px;
+
+padding:20px 40px;
+
+}
+
+#logo span{
+
+color:#fff;
+
+}
+
+#header{
+
+background-image:url("boka.jpg");
+
+height:1000px;
+
+width:1560px;
+
+background-size:cover;
+
+padding:134px 134px;
+
+}
+
+#great{
+
+margin:260px 300px;
+
+text-align:center;
+
+width:47%;
+
+}
+
+#boka{
+
+font-size: 60px;
+
+letter-spacing: 24px;
+
+color: #ffffff;
+
+font-family: "Shadows Into Light";
+
+margin:20px 0;
+
+}
+
+#bokagreat{
+
+letter-spacing: 12px;
+
+font-family: "roboto";
+
+text-transform:uppercase;
+
+color:white;
+
+font-size:40px;
+
+margin: 20px 0;
+
+}
+
+#started{
+
+font-size:60px;
+
+font-family: "Shadows Into Light";
+
+}
+
+#discover{
+
+font-size:40px;
+
+font-family:"roboto";
+
+background-color:transparent;
+
+border:2px solid white;
+
+border-radius:15px;
+
+color:white;
+
+letter-spacing:12px;
+
+margin:20px 0;
+
+}
+
+#reg{
+
+padding:200px 27%;
+
+background-color:white;
+
+text-align:center;
+
+}
+
+#contactform{
+
+font-size:40px;
+
+}
+
+#contactform button{
+
+font-size:40px;
+
+border-radius:5px;
+
+border:2px solid black;
+
+margin:20px 0px 20px 50px;
+
+width:240px;
+
+}
+
+table{
+
+border:none;
+
+font-size:40px;
+
+width:52%;
+
+}
+
+#contactform input{
+
+margin:20px 50px;
+
+border:none;
+
+font-size:40px;
+
+}
+
+#contactform input:focus{
+
+border:none;
+
+}
+
+.check{
+
+background-color:white;
+
+color:black;
+
+}
+
+.select{
+
+background-color:black;
+
+color:white;
+
+}
+
+#photos{
+
+padding:0 12%;
+
+text-align:center;
+
+}
+
+img{
+
+position:relative;
+
+}
+
+img:nth-of-type(3),img:last-child{
+
+top:-150px;
+
+}
+
+#footer{
+
+padding: 200px 10px 0 10px;
+
+}
+
+#info{
+
+margin-bottom:200px;
+
+}
+
+#info h2{
+
+text-transform:uppercase;
+
+font-size:50px;
+
+letter-spacing: 5px;
+
+font-weight:100;
+
+text-align:center;
+
+}
+
+#info p{
+
+font-size:30px;
+
+text-align:justify;
+
+}
+
+#menu{
+
+}
+
+#menu ul{
+
+list-style:none;
+
+display:flex;
+
+justify-content:space-between;
+
+}
+
+#menu li{
+
+font-size:30px;
+
+margin-left:30px;
+
+}
+
+.active{
+
+border-bottom:4px solid black;
+
+}
