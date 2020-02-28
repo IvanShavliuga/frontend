@@ -1,49 +1,23 @@
 /* Created by Ivan Shavliuga */
-
-
-
 body {
-
     background-color:#ccc!important ;
-
 }
-
 .card{
-
     background-color:white!important ;
-
     color:black!important;
-
 }
-
 .post-status{
-
     color:blue;
-
 }
-
 .logo{
-
     margin:0 30%;
-
     color:blue;
-
     font-size:40px;
-
-    
-
 }
-
 .logo span{
-
     color:#0af;
-
 }
-
 .info{
-
     margin:0 30%;
-
     color:black;
-
 }
