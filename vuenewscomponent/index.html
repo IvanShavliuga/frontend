@@ -4,194 +4,80 @@
   <meta charset="UTF-8">
   <title>vue news component</title>
   <link rel="stylesheet" href="./style.css">
-
+  <!-- development version, includes helpful console warnings <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <!-- production version, optimized for size and speed --> <script src="https://cdn.jsdelivr.net/npm/vue"></script> 
+  <link href="https://bootswatch.com/4/cyborg/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<!-- partial:index.partial.html -->
-<!-- Created by Ivan Shavliuga-->
-
-
-
-<!DOCTYPE html>
-
-<html>
-
-    <head>
-
-        <title>Simple Vue.js Project</title>
-
-        <!-- development version, includes helpful console warnings <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-
-        <!-- production version, optimized for size and speed --> <script src="https://cdn.jsdelivr.net/npm/vue"></script> 
-
-        <link href="https://bootswatch.com/4/cyborg/bootstrap.css" rel="stylesheet" type="text/css"/>
-
-    </head>
-
-    <body>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div id="compExample"> 
-
-        <div class="logo">
-
-           JavaScript <span>news</span>
-
-        </div>
-
-        <p class="info">
-
-           This is an example of page layout using bootstrap and vue framework.js. The component was announced in advance as a separate module, displaying one news according to the data accepted for input. Then, using the v-for Directive, the entire array of news is displayed. You can also check the interactivity: like the news or repost
-
-        </p>
-
-        <ol style="padding:0 20%">
-
-            <news 
-
-               v-for="news in posts" 
-
-               v-bind:post="news" 
-
-               v-bind:key="news.id"     
-
-               @repost="repost(news.id)"
-
-               @like="like(news.id)"></news> 
-
-            
-
-        </ol>
-
-    </div>
-
-    
-
-    <script>
-
-        Vue.component('news', { 
-
-            props: ['post'], 
-
-            template: `<div class="card mb-3" style="max-width: 25rem;"><div class="card-header">{{post.title}}</div><div class="card-body"><h6 class="card-title">{{post.type}}: <span class='post-status'>🙍{{post.user}}<br> 📅{{post.date}} ⌚{{post.time}}</span></h6><p class="card-text">{{post.desc}}</p><p><span class='post-status'><span @click="liked(post.id)" :style='post.likeclick?"color:red":"color:blue"'>💓{{post.like}}</span> <span @click="repostclick(post.id)">📢{{post.repost}}</span> 👁️{{post.views}} 📰{{post.cat}}</span></div></div>` 
-
-            
-
-        ,methods:{
-
-                repostclick(id){
-
-                    //call event component 
-
-                    this.$emit("repost",id);
-
-                },
-
-                liked(id){
-
-                    this.$emit("like",id);
-
-                }
-
-            }} );
-
-            
-
-        var app7 = new Vue({ 
-
-            el: '#compExample', 
-
-            data: { 
-
-                
-
-                posts: [ 
-
-                    { id: 0,user:"iv2",date:"12.08.2019",time:"9:00", title: 'I am learn vue.js', desc: 'Vue.js is modern framework. This modern framework comes from China and is already gaining popularity. It is easy to learn and suitable for beginners.',like:67,repost:3,views:500,cat:"study",type:"post",likeclick:false }, 
-
-                    { id: 1,user:"iv2",date:"13.08.2019",time:"10:00", title: 'I am learn angular', desc: 'Angular is popular framework. This framework is used by large banks and online stores. At one time it was actively promoted by google. Angular-developers receive consistently high salaries',like:35,repost:5,views:350,cat:"study",type:"post",likeclick:false}, 
-
-                    { id: 2,user:"iv2",date:"13.08.2019",time:"11:00", title: 'I learn JavaScript', desc: 'Modern JavaScript framework of the operation of the Internet. JavaScript works on both the server and the client. Modern JavaScript development requires knowledge of frameworks (JavaScript libraries).',like:24,repost:4,views:278,cat:"study",type:"post",likeclick:false } 
-
-                ] 
-
-            },
-
-            methods:{
-
-                repost(id){
-
-                    let rp={};
-
-                    rp.id=this.posts.length;
-
-                    rp.type="repost "+this.posts[id].user;
-
-                    rp.title=this.posts[id].title;
-
-                    rp.desc=this.posts[id].desc;
-
-                    rp.cat=this.posts[id].cat;
-
-                    rp.like=0;
-
-                    rp.views=0;
-
-                    rp.repost=0;
-
-                    let d= new Date();
-
-                    rp.date=d.getDate()+"."+(d.getMonth()+1)+"."+d.getFullYear();
-
-                    rp.time=d.getHours()+":"+d.getMinutes();
-
-                    rp.user="anonimus";
-
-                    rp.likeclick=false;
-
-                    this.posts[id].repost++;
-
-                    this.posts.push(rp);
-
-                },
-
-                like(id){
-
-                    if(!this.posts[id].likeclick)
-
-                       this.posts[id].like++;
-
-                    else
-
-                       this.posts[id].like--;
-
-                    this.posts[id].likeclick=!this.posts[id].likeclick;
-
-                }
-
-            } 
-
-            
-
-         })
-
-    </script>
-
-        
-
-    </body>
-
+ <body>
+  <div id="compExample"> 
+   <div class="logo">JavaScript <span>news</span></div>
+    <p class="info">
+      This is an example of page layout using bootstrap and vue framework.js. The component was announced in advance as 
+      a separate module, displaying one news according to the data accepted for input. 
+      Then, using the v-for Directive, the entire array of news is displayed. 
+      You can also check the interactivity: like the news or repost
+   </p>
+   <ol style="padding:0 20%">
+    <news v-for="news in posts" 
+          v-bind:post="news" 
+          v-bind:key="news.id"     
+          @repost="repost(news.id)"
+          @like="like(news.id)"></news> 
+   </ol>
+   </div>
+   <script>
+    Vue.component('news', { 
+      props: ['post'], 
+      template: `<div class="card mb-3" style="max-width: 25rem;"><div class="card-header">{{post.title}}</div><div class="card-body"><h6 class="card-title">{{post.type}}: <span class='post-status'>🙍{{post.user}}<br> 📅{{post.date}} ⌚{{post.time}}</span></h6><p class="card-text">{{post.desc}}</p><p><span class='post-status'><span @click="liked(post.id)" :style='post.likeclick?"color:red":"color:blue"'>💓{{post.like}}</span> <span @click="repostclick(post.id)">📢{{post.repost}}</span> 👁️{{post.views}} 📰{{post.cat}}</span></div></div>` 
+      ,methods:{
+        repostclick(id){
+          //call event component 
+          this.$emit("repost",id);
+        },
+        liked(id){
+          this.$emit("like",id);
+        }
+     }} );
+    var app7 = new Vue({ 
+       el: '#compExample', 
+       data: { 
+       posts: [ 
+         { id: 0,user:"iv2",date:"12.08.2019",time:"9:00", title: 'I am learn vue.js', desc: 'Vue.js is modern framework. This modern framework comes from China and is already gaining popularity. It is easy to learn and suitable for beginners.',like:67,repost:3,views:500,cat:"study",type:"post",likeclick:false }, 
+         { id: 1,user:"iv2",date:"13.08.2019",time:"10:00", title: 'I am learn angular', desc: 'Angular is popular framework. This framework is used by large banks and online stores. At one time it was actively promoted by google. Angular-developers receive consistently high salaries',like:35,repost:5,views:350,cat:"study",type:"post",likeclick:false}, 
+         { id: 2,user:"iv2",date:"13.08.2019",time:"11:00", title: 'I learn JavaScript', desc: 'Modern JavaScript framework of the operation of the Internet. JavaScript works on both the server and the client. Modern JavaScript development requires knowledge of frameworks (JavaScript libraries).',like:24,repost:4,views:278,cat:"study",type:"post",likeclick:false } 
+      ] 
+      },
+      methods:{
+        repost(id){
+        let rp={};
+        rp.id=this.posts.length;
+        rp.type="repost "+this.posts[id].user;
+        rp.title=this.posts[id].title;
+        rp.desc=this.posts[id].desc;
+        rp.cat=this.posts[id].cat;
+        rp.like=0;
+        rp.views=0;
+        rp.repost=0;
+        let d= new Date();
+        rp.date=d.getDate()+"."+(d.getMonth()+1)+"."+d.getFullYear();
+        rp.time=d.getHours()+":"+d.getMinutes();
+        rp.user="anonimus";
+        rp.likeclick=false;
+        this.posts[id].repost++;
+        this.posts.push(rp);
+     },
+     like(id){
+       if(!this.posts[id].likeclick)
+           this.posts[id].like++;
+      else
+           this.posts[id].like--;
+      this.posts[id].likeclick=!this.posts[id].likeclick;
+     }
+   } 
+ })   
+   </script>
+  </body>
 </html>
-<!-- partial -->
-  
+<!-- partial -->  
 </body>
 </html>
