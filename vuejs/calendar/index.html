@@ -1,87 +1,37 @@
 <!-- Created by shinyy-->
-
-
-
 <!DOCTYPE HTML>
-
 <html>
-
 <head>
-
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-
 <title>vue-calendar</title>
-
 <link type="text/css" rel="stylesheet" href="css/v-calendar.css"/>
-
 <script type="text/javascript" src=" https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
-
 </head>
-
-<style>
-
-</style>
-
 <body>
-
     <article class="v-calendar" ref="aaa">
-
         <section class="v-day">
-
-            <p>Mon</p >
-
-            <p>Tue</p >
-
-            <p>Wed</p >
-
-            <p>Thu</p >
-
-            <p>Fri</p >
-
-            <p>Sat</p >
-
-            <p>Sun</p >
-
+            <p>Mon</p>
+            <p>Tue</p>
+            <p>Wed</p>
+            <p>Thu</p>
+            <p>Fri</p>
+            <p>Sat</p>
+            <p>Sun</p>
         </section>
-
         <section class="v-calendar-inner">
-
-            
-
-            
-
-            <section class="v-calendar-box" v-for="(item,index) in calNum">
-
-                <section class="v-ym">{{y[index]}} {{m[index]}}</section>
-
-                <section class="v-date">
-
+           <section class="v-calendar-box" v-for="(item,index) in calNum">
+              <section class="v-ym">{{y[index]}} {{m[index]}}</section>
+               <section class="v-date">
                     <div v-for="item in day[index]"></div>
-
                     <div v-for="(item,dIdx) in dCount[m[index]-1]" :id=item :data-d=y[index]+"-"+m[index]+"-"+item :class="[dTrue>item&&mTrue==m[index]&&yTrue==y[index]?'dis':'',
-
                         dCur==item&&mCur==m[index]&&yCur==y[index]?'cur':'',dCur2==item&&mCur2==m[index]&&yCur2==y[index]?'cur':'']"  @click="calTab">
-
                         <div>{{item}}</div>    
-
                         <div class="mark" >{{dCur==item&&mCur==m[index]&&yCur==y[index]?'today':''}}</div>
-
                         <div class="mark" >{{dCur2==item&&mCur2==m[index]&&yCur2==y[index]?'tomorrow':''}}</div>
-
                     </div>
-
                 </section>
-
             </section>
-
-            
-
-            
-
-        </section>
-
-    </article>
-
+     </section>
+   </article>
 </body>
-
 </html>
