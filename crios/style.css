@@ -5,16 +5,13 @@ body{
     font-weight: 700;
     font-style: normal;
     background-color:rgb(250,251,253);
-
 }
-
 #header{
     background-image:url("header.png");
     height:700px;  
     text-align:center;
     background-repeat:no-repeat;
     background-position:center top;
-   
 }
 #logo{
     color:#56b;
@@ -48,7 +45,6 @@ h1{
     box-shadow: 0 0 15px rgba(0,0,0,0.5); 
     border-radius:24px;
     margin-top:40px;
-
 }
 #menu{
     
@@ -74,46 +70,37 @@ h2{
     display:flex;
     justify-content: space-around;
 }
-}
 .navblock h3{
     font-size:15px;
-
 }
 .navblock p{
      font-size:13px;
-
 }
 .articles{
      display:flex;
-     
 }
 .art{
      width:50%;
      height:300px;
-     background-color:#ccc;
-    
+     background-color:#ccc;   
 }
 .art1{
      width:50%;
      height:600px;
-     background-color:#fff;
-     
+     background-color:#fff;     
 }
 #artimg1{
      background-image:url("art2.jpg");
      background-position:center center;
-
 }
 #artimg2{
      background-image:url("art1.jpg");
-     background-position:center center;
-     
+     background-position:center center;     
 }
 #artimg3{
      background-image:url("art3.jpg");
      background-position:center center;
      background-repeat:no-repeat;
-
 }
 #artimg4{
      background-image:url("art4.jpg");
