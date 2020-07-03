@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+ <meta charset="utf-8"> 
+ <title>Dynamic Tabs - Javascript</title> 
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"> 
+ <!-- Optional Bootstrap theme --> 
+ <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src=" https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head> 
+<body> 
+ <div class="app">
+ <ul class="nav nav-tabs" id="myTab"> 
+  <li class="active"><a href="#sectionA">Profile</a></li> 
+  <li><a href="#sectionB">Messages</a></li> 
+ </ul> 
+ <div class="tab-content"> 
+  <div id="sectionA" class="tab-pane fade in active"> 
+   <h3>Profile</h3> 
+   <p><table class="table">
+    <tr><th colspan ="2">Information of user</th></tr>
+     <tr v-if="!showeditname" @click="showflagname()"><td>Name</td><td>{{user.name}}</td></tr>
+     <tr v-else><td>Name</td><td><input type="text" placeholder="name" v-model="editname"><button class ="btn btn-primary" @click="checkname()">✔️</button></td></tr>
+     <tr v-if="!showeditspec" @click="showflagspec()"><td>Specialization</td><td>{{user.spec}}</td></tr>
+     <tr v-else><td>Specialization</td><td><input type="text" placeholder="specialization" v-model="editspec"><button class ="btn btn-primary" @click="checkspec()">✔️</button></td></tr>
+     <tr><td>Skills</td><td><span v-for="(s,k) in user.skills" key="k"><span class='skill'>{{s}}</span><span class="del" @click="delskill(k)">x</span></span> <input type="text" placeholder="skill" v-model="skill"><button class="btn btn-primary" @click="addskill()">+</button></td></tr>
+     <tr v-if="!showeditcity" @click="showflagcity()"><td>City</td><td>{{user.city}}</td></tr>
+     <tr v-else><td>City</td><td><input type="text" placeholder="city" v-model="editcity"><button class ="btn btn-primary" @click="checkcity()">✔️</button></td></tr>
+ <tr><th colspan="2">Contacts</th></tr>
+ <tr><td>Link profile</td><td>{{user.link}}</td></tr>
+ <tr v-for="(c,k) in user.contacts" key=k><td>
+     {{c.messenger}}
+ </td><td>{{c.contact}}</td></tr>
+  <tr><td><input type="text" placeholder="messenger" v-model="mess"></td>
+  <td><input type="text" placeholder="contact" v-model="cont">
+      <button class="btn btn-primary" @click="addcont()">+</button>
+  </td>
+  </tr>
+</table></p> 
+  </div> 
+  <div id="sectionB" class="tab-pane fade"> 
+   <h3>Messages</h3> 
+   <p><table class="table">
+     <tbody 
+     v-for="(m,k) in messages" 
+     key="k" 
+     :class="m.read?'read':'unread'"
+     >
+         <tr @click="showmess(k)"><td><input type="checkbox" @click="readmess(k)"></td>
+     <td>{{m.user}}</td><td>{{m.title}}</td></tr>
+         <tr v-show="m.show"><td colspan=3>{{m.body}}</td></tr>
+     </tbody>
+ </table></p> 
+  </div> 
+  </div>
+ <script src="bootstrap/js/jquery.js"></script> 
+ <script src="bootstrap/js/bootstrap.js"></script> 
+ <script type="text/javascript"> 
+  $(document).ready(function() 
+  { 
+   $("#myTab a").click(function(e) 
+   { 
+    e.preventDefault(); 
+    $(this).tab('show'); 
+   }); 
+  }); 
+ </script> 
+</body>
+</html>
