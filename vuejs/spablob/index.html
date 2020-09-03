@@ -3,159 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <title>vue router spa blog</title>
-  
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
     <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-   
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
     <script src="https://unpkg.com/vuex" refer></script>
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" refer></script>
-
       <script src="https://unpkg.com/vue-router@2.7.0/dist/vue-router.js" refer></script>
-
-       
-
-    
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" refer></script>
-
-    
-
-    
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" refer></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" refer></script>
-
-  
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" refer></script>
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" refer></script>
-
 <style>
-
   [v-cloak] {
-
             opacity: 0;
-
         }
-
         .load {
-
-            
-
-            font-size: 20px;
-
+         font-size: 20px;
             position: absolute;
-
             left: 50%;
-
             top: 50%;
-
             /*transform: translate(-50%, -50%) !important;*/
-
             width: 64px;
-
             height: 64px;
-
         }
-
         [v-cloak] + .load {
-
             display: block;
-
         }
-
         </style>
-
 </head>
-
 <body>
-
 <script>
-
-    //  document.addEventListener("DOMContentLoaded", ready);
-
-    </script> 
-
+    //  document.addEventListener("DOMContentLoaded", ready)
+  </script> 
 <div v-cloak id="app">
-
    <div class="v-cloak" v-cloak>
-
     <div class="load">
-
       <div class="spinner-border text-muted"></div>
-
-      </div>
-
+     </div>
     </div>
-
 <nav class="navbar navbar-inverse">
-
     <div class="container-fluid">
-
         <div class="navbar-header">
-
-            
-
-            
-
             <ul class="nav navbar-nav">
-
           <li><router-link to="/">News</router-link></li>
-
           <li><router-link to="/user">User</router-link></li>
-
           <li><router-link to="/msg">Messages</router-link></li>
-
           <li><router-link to="/chats">Chats</router-link></li>
-
           <li><router-link to="/friends">Friends</router-link>
-
           <li><router-link to="/courses">Courses</rourter-link></li>
-
           <li><router-link to="/about">About</router-link></li>
-
             </ul>
-
         </div>
-
     </div>
-
 </nav>
-
     <div class="container">
-
- 
-
-      
-
     <router-view></router-view>
-
     </div>
-
     </div>
-
 </body>
-
 </html>
 <!-- partial -->
   <script  src="./script.js"></script>
-
 </body>
 </html>

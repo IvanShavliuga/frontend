@@ -1,0 +1,25 @@
+button{
+    width:28px;
+    height:28px;
+    padding:5px!important;
+
+th{
+    text-align:center;
+    background-color:#ffd;
+}
+tr:nth-child(2n+1){
+    background-color:#eff;
+}
+.skill{
+    color:blue;
+}
+.del{
+    color:red;
+    padding-right:5px;
+}
+.unread{
+    font-weight:bold;
+}
+.read{
+    font-weight:normal;
+}
