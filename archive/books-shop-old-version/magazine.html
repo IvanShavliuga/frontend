@@ -1,0 +1,144 @@
+<html>
+	<head>
+		<title>Magazine</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+	<div id="app">
+	<header>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="registr"><a href="c"><span class="glyphicon glyphicon-usd"></span>{{user.Money}} Money </a>
+			<a href="cm"><span class="glyphicon glyphicon-shopping-cart"></span> Your cart {{user.Purchase.length}}</a>
+			<a href="c"><span class="glyphicon glyphicon-user"></span> Profile</a>
+			<a href="f"><span class="glyphicon glyphicon-heart"></span> Favorites {{user.MyLike.length}}</a>
+			</div>
+			</div>
+
+		<nav role="navigation" class="navbar navbar-default">
+		<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+				<span class="sr-only">Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="#" class="navbar-brand">Books online</a><span v-on:click="visiblenav=!visiblenav" class="glyphicon glyphicon-chevron-left" ></span>
+
+		</div>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+
+			<ul class="nav navbar-nav navbar-fixed">
+				<li><a href="cm">Computers</a></li>
+		<li><a href="c">Cooking</a></li>       
+		<li class="selectmenu"><a href="e">Education</a></li>       
+		<li><a href="f">Fiction</a></li>       
+		<li><a href="h">Health</a></li>
+		<li><a href="mt">Mathematics</a></li>
+		<li><a href="md">Medical</a></li>
+		<li><a href="r">Reference</a></li>
+				<li><a href="s">Sience</a></li></ul>
+
+			<div class="input-group ">
+
+			<form action="" method="get" class="navbar-form navbar-right" role="search">
+				<span class="input-group-btn">
+				<input type="text" class="form-control" placeholder="Find books...">
+
+				<button type="submit" class="btn btn-success" value="Search">Search
+					<span class="glyphicon glyphicon-search"></span>
+				</button></span>
+		</form>
+			</div>
+		</nav>
+
+	</div>
+
+
+
+	</header>
+    <main>
+    <div class="container-fluid">
+
+		<div class="row">
+          <div class="col col-lg-2 col-sm-10"  v-if="visiblenav">
+
+            <div id="catmnu">
+
+			<ul>
+				<li class="catbar cat1">All</li>
+				<li class="cat1">Fiction & Literature</li>
+				<ul>
+					<li class="catbar">Children</li>
+					<li class="catbar selectmenu">Science</li>
+					<li class="catbar">Fantasy</li>
+					<li class="catbar">Mystery</li>
+					<li class="catbar">Romance</li>
+					<li class="catbar">Horror</li>
+					<li class="catbar">Poetry</li>
+					<li class="catbar">Literature</li>
+					<li class="catbar">Crime</li>
+				</ul>
+				<li class="catbar cat1">Non - Fiction</li>
+				<ul>
+					<li class="catbar">Comic</li>
+					<li class="catbar">Cook</li>
+					<li class="catbar">Psychology</li>
+					<li class="catbar">Medical</li>
+					<li class="catbar">Art</li>
+					<li class="catbar">Photography</li>
+					<li class="catbar">Law</li>
+					<li class="catbar">History</li>
+					<li class="catbar">Business</li>
+					<li class="catbar">Computers</li>
+				</ul>
+				<li class="catbar cat1">Other</li>
+			 	<ul>
+					<li class="catbar">Baby</li>
+					<li class="catbar">Sex</li>
+					<li class="catbar">Travel</li>
+					<li class="catbar">Science</li>
+					<li class="catbar">Sport`s</li>
+
+				</ul>
+
+
+			</ul>
+		  </div>
+		</div>
+			<div id="bookslist">
+				<div class="col col-xs-6 col-sm-12 col-md-2 col-lg-2 " v-for="book in books">
+					<article>
+						<img src="book.jpg">
+						<h6>{{book.Author}}</h6>
+						<h6>{{book.Title}}</h6>
+						<span class="glyphicon glyphicon-heart" v-on:click="userlike(book.Id)"></span>{{book.Likes}}
+						<span class="glyphicon glyphicon-usd"></span>{{book.Money}}
+					</article>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="magazine.js"></script>
+
+	</body>
+</html>
