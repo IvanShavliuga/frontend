@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 47" width="70" height="47">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #4758a9 } 
+		.shp1 { fill: #ffffff } 
+		.shp2 { fill: #ed5565 } 
+	</style>
+	<g id="GB">
+		<path id="Rounded Rectangle 7 copy" class="shp0" d="M6.36 0L63.64 0C67.15 0 70 2.87 70 6.41L70 40.59C70 44.13 67.15 47 63.64 47L6.36 47C2.85 47 0 44.13 0 40.59L0 6.41C0 2.87 2.85 0 6.36 0Z" />
+		<path id="Rectangle 5 copy 5" class="shp1" d="M-0.55 49.72L-3.25 45.51L71.55 -2.72L74.25 1.49L-0.55 49.72Z" />
+		<path id="Rectangle 5 copy 5" class="shp2" d="M-1 49.01L-2.8 46.21L72 -2.01L73.8 0.79L-1 49.01Z" />
+		<path id="Rectangle 5 copy 6" class="shp1" d="M71.31 50L74 45.83L-0.31 -2L-3 2.17L71.31 50Z" />
+		<path id="Rectangle 5 copy 6" class="shp2" d="M71.76 49.3L73.56 46.52L-0.76 -1.3L-2.56 1.48L71.76 49.3Z" />
+		<path id="Rectangle 5 copy 4" class="shp1" d="M0 30L0 18L70 18L70 30L0 30Z" />
+		<path id="Rectangle 5 copy 3" class="shp1" d="M29 0L41 0L41 47L29 47L29 0Z" />
+		<path id="Rectangle 5 copy 2" class="shp2" d="M0 28L0 20L70 20L70 28L0 28Z" />
+		<path id="Rectangle 5 copy 2" class="shp2" d="M31 0L39 0L39 47L31 47L31 0Z" />
+	</g>
+</svg>
